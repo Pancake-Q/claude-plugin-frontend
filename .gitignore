@@ -1,0 +1,29 @@
+node_modules
+dist
+.output
+.nuxt
+
+# Editor
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Cache
+.eslintcache
+*.tsbuildinfo
+
+# Coverage
+coverage
+
+# Temp
+tmp
+temp

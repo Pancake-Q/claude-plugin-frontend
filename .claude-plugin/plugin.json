@@ -1,0 +1,10 @@
+{
+  "name": "claude-plugin-frontend",
+  "version": "1.0.0",
+  "description": "全栈前端工具集插件 - 包含前端设计、Vue 生态开发、代码审查、组件生成、性能审计等能力",
+  "author": { "name": "pancakeHub" },
+  "homepage": "https://github.com/pancakeHub/claude-plugin-frontend",
+  "repository": "https://github.com/pancakeHub/claude-plugin-frontend",
+  "license": "MIT",
+  "keywords": ["frontend", "vue", "design", "code-review", "performance"]
+}

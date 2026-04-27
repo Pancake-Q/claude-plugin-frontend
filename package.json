@@ -1,0 +1,29 @@
+{
+  "name": "claude-plugin-frontend",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.30.3",
+  "description": "全栈前端工具集插件 - Claude Code Plugin",
+  "author": "pancakeHub",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.13.2",
+    "eslint": "^9.27.0",
+    "eslint-plugin-format": "^2.0.1",
+    "lint-staged": "^16.1.0",
+    "simple-git-hooks": "^2.12.1",
+    "typescript": "^5.8.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
