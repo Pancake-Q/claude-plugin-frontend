@@ -8,5 +8,6 @@ export default antfu({
     '.agents/**',
     '.claude/**',
     '.idea/**',
+    'skills/**',
   ],
 })
