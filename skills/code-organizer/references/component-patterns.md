@@ -3,15 +3,9 @@
 ## Vue 3 Component Structure
 
 ```vue
-<template>
-  <div class="user-card">
-    {{ displayName }}
-  </div>
-</template>
-
 <script setup lang="ts">
 // 1. Imports — Vue API → Components → Composables → Utils → Types
-import { computed, ref, onMounted } from 'vue'
+import { computed, ref, watch, onMounted } from 'vue'
 import UserAvatar from './UserAvatar.vue'
 import { useUserData } from '@/composables/useUserData'
 import { formatName } from '@/utils/formatters'
@@ -40,7 +34,18 @@ function handleClick() {
 onMounted(() => {
   // initialization
 })
+
+// 7. Watch / Side Effects
+watch(() => props.user, (newUser) => {
+  isLoading.value = true
+})
 </script>
+
+<template>
+  <div class="user-card">
+    {{ displayName }}
+  </div>
+</template>
 
 <style scoped lang="scss">
 .user-card {
