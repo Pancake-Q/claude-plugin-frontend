@@ -39,6 +39,22 @@ Compare against the standard structure and produce a checklist.
 | Middleware | `middleware/` |
 | Server code | `server/` |
 
+### Script Internal Block Ordering
+
+For each `.vue` file with `<script setup>`, verify code blocks follow this order:
+
+| # | Block | Indicators |
+|---|-------|-----------|
+| 1 | Imports | `import` statements |
+| 2 | Props / Emits | `defineProps`, `defineEmits`, `withDefaults` |
+| 3 | State | `ref()`, `reactive()`, `shallowRef()` |
+| 4 | Computed | `computed()` |
+| 5 | Methods | `function` declarations, arrow functions |
+| 6 | Lifecycle | `onMounted`, `onUnmounted`, `onBeforeMount`, etc. |
+| 7 | Watch / Side Effects | `watch()`, `watchEffect()` |
+
+**Violations:** any block appearing before a block with a lower number (e.g., `watch` before `computed`, `ref` before `defineProps`).
+
 ### Component Classification
 
 | Category | Path | Characteristics |

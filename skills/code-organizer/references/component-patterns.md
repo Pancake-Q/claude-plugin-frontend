@@ -4,14 +4,12 @@
 
 ```vue
 <script setup lang="ts">
-// 1. Imports — Vue API → Components → Composables → Utils → Types
 import { computed, ref, watch, onMounted } from 'vue'
 import UserAvatar from './UserAvatar.vue'
 import { useUserData } from '@/composables/useUserData'
 import { formatName } from '@/utils/formatters'
 import type { UserType } from '@/types'
 
-// 2. Props / Emits
 interface Props {
   user: UserType
   count?: number
@@ -19,23 +17,18 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), { count: 0 })
 const emit = defineEmits<{ update: [value: number] }>()
 
-// 3. State
 const isLoading = ref(false)
 
-// 4. Computed
 const displayName = computed(() => formatName(props.user.firstName, props.user.lastName))
 
-// 5. Methods
 function handleClick() {
   emit('update', props.count + 1)
 }
 
-// 6. Lifecycle
 onMounted(() => {
-  // initialization
+  useUserData(props.user.id)
 })
 
-// 7. Watch / Side Effects
 watch(() => props.user, (newUser) => {
   isLoading.value = true
 })

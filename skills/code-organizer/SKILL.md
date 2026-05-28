@@ -3,7 +3,7 @@ name: code-organizer
 description: Frontend code organizer and development guidelines for Vue 3 / Nuxt 3 / React / Next.js projects. Scans project structure, diagnoses issues, proposes reorganization, and executes after confirmation. Also covers naming conventions, component patterns, TypeScript, styling, and refactoring.
 metadata:
   author: pancakeHub
-  version: "2026.4.3"
+  version: "2026.5.28"
 ---
 
 Analyze, diagnose, and reorganize frontend project directory structures. Also serves as the canonical reference for coding conventions and best practices across Vue 3/Nuxt 3, React/Next.js, TypeScript, and multiple styling approaches.
