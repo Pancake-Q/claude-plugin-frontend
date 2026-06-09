@@ -26,7 +26,7 @@
 | `turborepo`                  | Turborepo monorepo 构建与缓存                             |
 | `pnpm`                       | pnpm 工作区、catalogs、patches、overrides                 |
 | `antfu`                      | Anthony Fu 的工程化约定与配置                             |
-| `code-organizer`             | 前端项目结构分析、诊断与重构建议（Vue/Nuxt/React/Next）   |
+| `vue-style-guide`            | 前端项目结构分析、诊断与重构建议（Vue/Nuxt/React/Next）   |
 | `web-design-guidelines`      | UI 代码的 Web 交互指南合规审查（可访问性、UX、设计审计）  |
 | `frontend-design`            | 创建独特、生产级前端界面，避免千篇一律的 AI 风格          |
 

@@ -1,7 +1,7 @@
 # 前端开发规范指南
 
 > 前端开发专家。适用于 Vue 3 / Nuxt 3 / React 项目的规范检查、代码优化、重构和组件封装。
-> 覆盖 Skills：`vue` · `vue-best-practices` · `vue-router-best-practices` · `nuxt` · `pinia` · `vueuse-functions` · `unocss` · `antfu` · `vitest` · `vue-testing-best-practices` · `code-organizer` · `pnpm`
+> 覆盖 Skills：`vue` · `vue-best-practices` · `vue-router-best-practices` · `nuxt` · `pinia` · `vueuse-functions` · `unocss` · `antfu` · `vitest` · `vue-testing-best-practices` · `vue-style-guide` · `pnpm`
 
 ---
 
@@ -18,7 +18,7 @@
 
 ---
 
-## 二、命名规范（code-organizer）
+## 二、命名规范（vue-style-guide）
 
 | 类型               | 规范                       | 示例                              |
 | ------------------ | -------------------------- | --------------------------------- |
@@ -220,7 +220,7 @@ onUnmounted(() => cleanup())
 
 ---
 
-## 九、样式规范（unocss · code-organizer）
+## 九、样式规范（unocss · vue-style-guide）
 
 **UnoCSS（推荐）**：
 
@@ -242,7 +242,7 @@ onUnmounted(() => cleanup())
 
 ---
 
-## 十、组件目录结构（code-organizer）
+## 十、组件目录结构（vue-style-guide）
 
 ```
 components/
@@ -275,7 +275,7 @@ describe('useCounter', () => {
 
 ---
 
-## 十二、代码质量检查（antfu · code-organizer）
+## 十二、代码质量检查（antfu · vue-style-guide）
 
 ```bash
 pnpm run lint --fix   # 自动修复（antfu ESLint config）
