@@ -130,5 +130,5 @@ chore: upgrade dependencies to latest versions
 
 ---
 
-**最后更新**: 2026-03-24
-**版本**: 1.2.0
+**最后更新**: 2026-06-09
+**版本**: 1.3.0
