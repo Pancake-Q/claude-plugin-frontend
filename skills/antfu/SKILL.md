@@ -3,7 +3,7 @@ name: antfu
 description: Anthony Fu's opinionated tooling and conventions for JavaScript/TypeScript projects. Use when setting up new projects, configuring ESLint/Prettier alternatives, monorepos, library publishing, or when the user mentions Anthony Fu's preferences.
 metadata:
   author: Anthony Fu
-  version: "2026.02.03"
+  version: "2026.06.22"
 ---
 
 ## Coding Practices
@@ -29,6 +29,13 @@ metadata:
 
 - **Explicit return types**: Declare return types explicitly when possible
 - **Avoid complex inline types**: Extract complex types into dedicated `type` or `interface` declarations
+
+### Explicitness
+
+Favor explicit, traceable code over implicit "magic". A reader (human or agent) should be able to follow where every name comes from without running tooling.
+
+- **Explicit imports**: Prefer explicit `import` statements. Avoid auto-imports — when a framework provides them (e.g. Nuxt/Nitro), turn them off for new projects (see [app-development](references/app-development.md)).
+- **No path aliases by default**: Use relative imports (`./foo`, `../bar`). Only use path aliases (`@/`, `~/`, `#imports`, etc.) when they are *already* configured in the project; don't introduce new ones for greenfield code.
 
 ### Comments
 
@@ -57,6 +64,20 @@ metadata:
 | `nun <pkg>` | Uninstall dependency |
 | `nci` | Clean install (`pnpm i --frozen-lockfile`) |
 | `nlx <pkg>` | Execute package (`npx`) |
+
+### Checking npm Package Versions
+
+Use [`fast-npm-meta`](https://github.com/antfu/fast-npm-meta) to look up the latest version of a package — it queries a small metadata endpoint instead of downloading the full registry payload (which can be megabytes per package).
+
+```bash
+nlx fast-npm-meta version vite              # 7.3.1
+nlx fast-npm-meta version "nuxt@^3.5"       # 3.5.22 — range-aware
+nlx fast-npm-meta version vite nuxt vue     # multiple at once
+nlx fast-npm-meta version vite --json       # JSON for scripting
+nlx fast-npm-meta full vite                 # full version list + dist-tags
+```
+
+Prefer this over `npm view <pkg> version` when you only need the latest version, and over reading `package.json` from the registry directly.
 
 ### TypeScript Config
 
@@ -125,6 +146,6 @@ Avoid the default catalog. Catalog names can be adjusted per project needs.
 |-------|-------------|-----------|
 | ESLint Config | Framework support, formatters, rule overrides, VS Code settings | [antfu-eslint-config](references/antfu-eslint-config.md) |
 | Project Setup | .gitignore, GitHub Actions, VS Code extensions | [setting-up](references/setting-up.md) |
-| App Development | Vue/Nuxt/UnoCSS conventions and patterns | [app-development](references/app-development.md) |
+| App Development | Vue/Nuxt/UnoCSS conventions, auto-import control, Storybook component testing | [app-development](references/app-development.md) |
 | Library Development | tsdown bundling, pure ESM publishing | [library-development](references/library-development.md) |
 | Monorepo | pnpm workspaces, centralized alias, Turborepo | [monorepo](references/monorepo.md) |
