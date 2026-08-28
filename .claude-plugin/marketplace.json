@@ -8,7 +8,7 @@
     {
       "name": "claude-plugin-frontend",
       "description": "全栈前端工具集插件 - 包含前端设计、Vue 生态开发、代码审查、组件生成、性能审计等能力",
-      "version": "1.0.0",
+      "version": "1.4.0",
       "author": {
         "name": "pancakeHub"
       },
